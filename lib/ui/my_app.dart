@@ -1,3 +1,7 @@
+import 'package:f_navigation_template/ui/pages/page1.dart';
+import 'package:f_navigation_template/ui/pages/page2.dart';
+import 'package:f_navigation_template/ui/pages/page3a.dart';
+import 'package:f_navigation_template/ui/pages/page3b.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +30,15 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.notoSans().fontFamily,
       ),
       themeMode: ThemeMode.light,
+
       //todo: Implement name routing (initialRoute and getPages parameters)
+      initialRoute: '/welcome',
+      getPages: [
+        GetPage(name: '/welcome', page: () => const Page1()),
+        GetPage(name: '/page2', page: () => Page2()),
+        GetPage(name: '/page3a', page: () => const Page3A()),
+        GetPage(name: '/page3b', page: () => Page3B()),
+      ],
     );
   }
 }
